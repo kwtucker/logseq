@@ -4,10 +4,10 @@ exclude-from-graph-view:: true
 - # Templates
 	- ## Property Meanings
 		- ### State
-			- 🌱 Seedling: Needs elaboration
-			- 🌿 Herb: Needs more detail, linking, etc.
-			- 🌲 Evergreen: Notes that have more permanence
-			- 🔧 Wrench: Notes that are work specific.
+			- [[🌱]] Seedling: Needs elaboration
+			- [[🌿]] Herb: Needs more detail, linking, etc.
+			- [[🌲]] Evergreen: Notes that have more permanence
+			- [[🔧]] Wrench: Notes that are work specific.
 		- ### Input
 			- Type of content that is being put into the personal knowledge management system.
 		- ### Tags
@@ -20,6 +20,7 @@ exclude-from-graph-view:: true
 	  template-including-parent:: false
 		- icon:: 
 		  state:: [[🌱]]
+		  name::
 		  input::
 		  tags::
 			- # <% current page %>
@@ -28,6 +29,7 @@ exclude-from-graph-view:: true
 	  template:: Block
 	  template-including-parent:: false
 		- state:: [[🌱]]
+		  name::
 		  input::
 		  tags::
 	- ## Person Template
@@ -46,9 +48,9 @@ exclude-from-graph-view:: true
 	  template:: Book
 	  template-including-parent:: false
 		- state:: [[🌱]]
+		  name::
 		  input:: [[Books]]
 		  tags::
-		  name::
 		  genre::
 		  authors::
 		  date-finished:: 
@@ -83,9 +85,9 @@ exclude-from-graph-view:: true
 	  template:: Article
 	  template-including-parent:: false
 		- state:: [[🌱]]
+		  name::
 		  input:: [[Articles]]
 		  tags::
-		  name::
 		  genre::
 		  authors::
 		  date-finished::
@@ -96,6 +98,7 @@ exclude-from-graph-view:: true
 	  template:: Meeting
 	  template-including-parent:: false
 		- state:: [[🌱]]
+		  name::
 		  input:: [[Meetings]]
 		  tags::
 		  company::
@@ -112,9 +115,9 @@ exclude-from-graph-view:: true
 	  template:: Place
 	  template-including-parent:: false
 		- state:: [[🌱]]
+		  name::
 		  input:: [[Places]]
 		  tags::
-		  name::
 		  phone::
 		  email::
 		  website::
