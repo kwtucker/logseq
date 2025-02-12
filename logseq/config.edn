@@ -270,7 +270,16 @@
  ;;  ["js" "Javascript"]
  ;;  ["md" "Markdown"]
  ;;  ]
- :commands []
+ :commands [
+    ["pill-red" [[:editor/input "{{pill red,}}" {:backward-pos 2}]]]
+    ["pill-yellow" [[:editor/input "{{pill yellow,}}" {:backward-pos 2}]]]
+    ["pill-blue" [[:editor/input "{{pill blue,}}" {:backward-pos 2}]]]
+    ["pill-green" [[:editor/input "{{pill green,}}" {:backward-pos 2}]]]
+    ["pill-grey" [[:editor/input "{{pill grey,}}" {:backward-pos 2}]]]
+    ["seed" [[:editor/input "[[🌱]]"]]]
+    ["herb" [[:editor/input "[[🌿]]"]]]
+    ["evergreen" [[:editor/input "[[🌲]]"]]]
+ ]
 
  ;; Enable collapsing blocks with titles but no children.
  ;; By default, only blocks with children can be collapsed.
@@ -288,7 +297,9 @@
  ;; input "{{poem red,blue}}"
  ;; becomes
  ;; Rose is red, violet's blue. Life's ordered: Org assists you.
- :macros {}
+ :macros {
+     "pill" "<span class=\"pill pill-$1\">$2</span>"
+ }
 
  ;; Configure the default expansion level for linked references.
  ;; For example, consider the following block hierarchy:

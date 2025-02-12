@@ -3,10 +3,58 @@
   overflow: hidden;
 }
 
-.ls-block .custom-query>.th {
-  margin-bottom:0;
+.ls-block .custom-query > .th {
+  margin-bottom: 0;
 }
 
-.custom-query>.th:hover + .cp__query-builder {
-  height: auto ;
+.custom-query > .th:hover + .cp__query-builder {
+  height: auto;
+}
+
+/*Pills*/
+html[data-theme="dark"],
+html[data-theme="light"] {
+  --red: #cb4b16;
+  --orange: #ffb86c;
+  --yellow: #b58902;
+  --blue: #656aa4;
+  --green: #219d85;
+  --grey: #586e75;
+}
+
+span.pill {
+  border-radius: var(--ls-border-radius-low);
+  background-color: var(--ls-page-inline-code-bg-color);
+  border: 1px solid;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+}
+
+span.pill-red {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+span.pill-yellow {
+  border-color: var(--yellow);
+  color: var(--yellow);
+}
+
+span.pill-blue {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+span.pill-green {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+span.pill-grey {
+  border-color: var(--grey);
+  color: var(--grey);
+}
+
+span.inline div {
+  display: inline;
 }
