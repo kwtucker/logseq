@@ -54,7 +54,3 @@ span.pill-grey {
   border-color: var(--grey);
   color: var(--grey);
 }
-
-span.inline div {
-  display: inline;
-}
