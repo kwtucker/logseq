@@ -7,7 +7,6 @@
 - ## Todo
 	- query-table:: true
 	  query-properties:: [:page :block]
-	  collapsed:: true
 	  #+BEGIN_QUERY
 	  {:title [:b "🔨 NOW"]
 	  :query [:find (pull ?h [*])

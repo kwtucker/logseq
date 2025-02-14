@@ -2,7 +2,7 @@ icon:: 📋
 
 	- # Dashboard
 		- ## How to use this graph
-			- Understanding my custom block [[Properties]] 
+			- Understanding my custom block [[Properties]]
 			- #### Contents Page
 				- I used the contents page as an "At a glance" view in the right sidebar.
 				- #### Main Topics
