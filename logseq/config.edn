@@ -206,63 +206,7 @@
  ;; The following queries will be displayed at the bottom of today's journal page.
  ;; The "NOW" query returns tasks with "NOW" or "DOING" status.
  ;; The "NEXT" query returns tasks with "NOW", "LATER", or "TODO" status.
-:default-queries 
-  {
-  ; :journals
-  ;   [{:title [:b "🕗 OVERDUE (past scheduled or deadline items not done)"]
-  ;   :query [:find (pull ?b [*])
-  ;   	:in $ ?start ?end
-  ;   	:where
-  ;   (or 
-  ;   	[?b :block/scheduled ?d] 
-  ;   	[?b :block/deadline ?d]
-  ;   )
-  ;   (not
-  ;     [?b :block/marker ?marker] 
-  ;     [(contains? #{"DONE" "CANCELLED"} ?marker)]
-  ;    )
-  ;   [(>= ?d ?start)]
-  ;   [(<= ?d ?end)]
-  ;   ]
-  ;   :inputs [:1500d-before :today]
-  ;   :collapsed? false}
-  ;  {:title [:b "📅 NEXT (tasks scheduled within next 7 days)"]
-  ;   :query [:find (pull ?b [*])
-  ;   	:in $ ?start ?end
-  ;   	:where
-  ;   (or 
-  ;   	[?b :block/scheduled ?d] 
-  ;   	[?b :block/deadline ?d]
-  ;   )
-  ;   (not
-  ;     [?b :block/marker ?marker] 
-  ;     [(contains? #{"DONE"} ?marker)]
-  ;    )
-  ;   [(>= ?d ?start)]
-  ;   [(<= ?d ?end)]
-  ;   ]
-  ;   :inputs [:today :7d-after]
-  ;   :collapsed? false
-  ;   }
-  ;  {:title [:b "🔭 HORIZON (Tasks scheduled for between a week and 3 months)"]
-  ;   :query [:find (pull ?b [*])
-  ;   	:in $ ?start ?end
-  ;   	:where
-  ;   (or 
-  ;   	[?b :block/scheduled ?d] 
-  ;   	[?b :block/deadline ?d]
-  ;   )
-  ;   (not
-  ;     [?b :block/marker ?marker] 
-  ;     [(contains? #{"DONE"} ?marker)]
-  ;    )
-  ;   [(>= ?d ?start)]
-  ;   [(<= ?d ?end)]
-  ;   ]
-  ;   :inputs [:today/+7d  :today/+90d]
-  ;   :collapsed? false
-  ;   }]
- }
+:default-queries {}
 
  ;; Add custom commands to the command palette
  ;; Example usage:
@@ -272,11 +216,6 @@
  ;;  ["md" "Markdown"]
  ;;  ]
  :commands [
-    ["pill-red" [[:editor/input "{{pill red,}}" {:backward-pos 2}]]]
-    ["pill-yellow" [[:editor/input "{{pill yellow,}}" {:backward-pos 2}]]]
-    ["pill-blue" [[:editor/input "{{pill blue,}}" {:backward-pos 2}]]]
-    ["pill-green" [[:editor/input "{{pill green,}}" {:backward-pos 2}]]]
-    ["pill-grey" [[:editor/input "{{pill grey,}}" {:backward-pos 2}]]]
     ["seed" [[:editor/input "[[🌱]]"]]]
     ["herb" [[:editor/input "[[🌿]]"]]]
     ["evergreen" [[:editor/input "[[🌲]]"]]]
@@ -298,9 +237,7 @@
  ;; input "{{poem red,blue}}"
  ;; becomes
  ;; Rose is red, violet's blue. Life's ordered: Org assists you.
- :macros {
-     "pill" "<span class=\"pill pill-$1\">$2</span>"
- }
+ :macros {}
 
  ;; Configure the default expansion level for linked references.
  ;; For example, consider the following block hierarchy:
@@ -334,7 +271,7 @@
  ;;  :charge-range    600}   ; Default value: 600
 
  ;; Favorites to list on the left sidebar
- :favorites ["dashboard" "people" "literature" "templates" "🌱" "🌿" "🌲"]
+ :favorites ["🌱" "🌿" "🌲"]
 
  ;; Set flashcards interval.
  ;; Expected value:
