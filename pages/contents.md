@@ -4,7 +4,7 @@
 	  query-properties:: [:page]
 	  query-sort-by:: page
 	  query-sort-desc:: false
-- ## Todo's
+- ## Todo
 	- query-table:: true
 	  query-properties:: [:page :block]
 	  collapsed:: true
