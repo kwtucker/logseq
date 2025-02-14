@@ -1,5 +1,6 @@
 icon:: 🏗️
 exclude-from-graph-view:: true
+input:: [[Dashboard]]
 
 - # Templates
 	- See [[Properties]] for more information.
