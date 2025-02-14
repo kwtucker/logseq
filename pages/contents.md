@@ -7,6 +7,7 @@
 - ## Todo's
 	- query-table:: true
 	  query-properties:: [:page :block]
+	  collapsed:: true
 	  #+BEGIN_QUERY
 	  {:title [:b "🔨 NOW"]
 	  :query [:find (pull ?h [*])
@@ -24,10 +25,11 @@
 	                   (sort-by (fn [h]
 	                              (get h :block/priority "Z")) result))
 	  :group-by-page? false
-	  :collapsed? true}
+	  :collapsed? false}
 	  #+END_QUERY
 	- query-table:: true
 	  query-properties:: [:page :block]
+	  collapsed:: true
 	  #+BEGIN_QUERY
 	  {:title [:b "🕗 OVERDUE"]
 	  :query [:find (pull ?b [*])
@@ -49,8 +51,9 @@
 	  #+END_QUERY
 	- query-table:: true
 	  query-properties:: [:page :block]
+	  collapsed:: true
 	  #+BEGIN_QUERY
-	  {:title [:b "📅 NEXT (tasks scheduled within next 7 days)"]
+	  {:title [:b "📅 NEXT"]
 	  :query [:find (pull ?b [*])
 	        :in $ ?start ?end
 	        :where
@@ -70,8 +73,9 @@
 	  #+END_QUERY
 	- query-table:: true
 	  query-properties:: [:page :block]
+	  collapsed:: true
 	  #+BEGIN_QUERY
-	  {:title [:b "🔭 HORIZON (Tasks scheduled for between a week and 3 months)"]
+	  {:title [:b "🔭 HORIZON"]
 	  :query [:find (pull ?b [*])
 	        :in $ ?start ?end
 	        :where
@@ -89,4 +93,3 @@
 	  :inputs [:today/+7d  :today/+90d]
 	  :collapsed? true}
 	  #+END_QUERY
-
