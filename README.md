@@ -1,4 +1,6 @@
 # Logseq
 
-This is my Logseq configuration, templates, and css that I have source from various places. 
+My Logseq configuration, templates, and css
+
+Visit Example Site: https://kwtucker.github.io/logseq
 

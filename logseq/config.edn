@@ -399,4 +399,3 @@
  :orphan-pages? true
  :journal? true
  :builtin-pages? false}
- :publishing/all-pages-public? true}
