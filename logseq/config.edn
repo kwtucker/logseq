@@ -391,7 +391,7 @@
  ;;      ;use triple underscore `___` for slash `/` in page title
  ;;      ;use Percent-encoding for other invalid characters
  :file/name-format :triple-lowbar
- :feature/enable-whiteboards? true
+ :feature/enable-whiteboards? false
  :feature/enable-flashcards? false
  :ui/show-brackets? false
  :journal/page-title-format "yyyy-MM-dd"
