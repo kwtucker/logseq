@@ -1,6 +1,7 @@
 icon:: 📋
 
 	- # Dashboard
+    - Graph Source: https://github.com/kwtucker/logseq
 		- ## How to use this graph
 			- Understanding my custom block [[Properties]]
 			- #### Contents Page
@@ -12,4 +13,4 @@ icon:: 📋
 						- Now: Task that are marked now
 						- Overdue: Scheduled tasks that are past due
 						- Next: Scheduled tasks within 7 days
-						- Horizon: Schedule tasks from 7 days to 3 months out.
+						- Horizon: Scheduled tasks from 7 days to 3 months out.

@@ -34,7 +34,6 @@ input:: [[Dashboard]]
 		  company::
 		  job-title::
 	- ## Book Template
-	  
 	  template:: Book
 	  template-including-parent:: false
 		- state:: [[🌱]]

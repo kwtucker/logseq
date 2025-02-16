@@ -1,9 +1,9 @@
 # Contents
 	- {{query (property :input "Dashboard")}}
 	  query-table:: true
-	  query-properties:: [:page]
 	  query-sort-by:: page
 	  query-sort-desc:: false
+	  query-properties:: [:icon :page]
 - ## Todo
 	- query-table:: true
 	  query-properties:: [:page :block]
