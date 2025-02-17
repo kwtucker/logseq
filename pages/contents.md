@@ -92,3 +92,20 @@
 	  :inputs [:today/+7d  :today/+90d]
 	  :collapsed? true}
 	  #+END_QUERY
+	- query-table:: true
+	  query-properties:: [:page :block]
+	  collapsed:: true
+	  #+BEGIN_QUERY
+	  {:title [:b "📚 Backlog"]
+	  :query [:find (pull ?h [*])
+	         :in $ 
+	         :where
+	         [?h :block/marker "LATER"]  ;; Only "LATER" tasks
+	         [?h :block/page ?p]
+	         ]
+	  :result-transform (fn [result]
+	                      (sort-by (fn [h]
+	                                 (get h :block/priority "Z")) result))
+	  :group-by-page? false
+	  :collapsed? false}
+	  #+END_QUERY
