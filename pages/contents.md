@@ -21,8 +21,7 @@
 	       [(<= ?d ?today)]]
 	  :inputs [:14d :today]
 	  :result-transform (fn [result]
-	                   (sort-by (fn [h]
-	                              (get h :block/priority "Z")) result))
+	                   (sort-by (fn [h] (get h :block/priority "Z")) result))
 	  :group-by-page? false
 	  :collapsed? false}
 	  #+END_QUERY
@@ -74,28 +73,6 @@
 	  query-properties:: [:page :block]
 	  collapsed:: true
 	  #+BEGIN_QUERY
-	  {:title [:b "🔭 HORIZON"]
-	  :query [:find (pull ?b [*])
-	        :in $ ?start ?end
-	        :where
-	        (or 
-	          [?b :block/scheduled ?d] 
-	          [?b :block/deadline ?d]
-	        )
-	        (not
-	          [?b :block/marker ?marker] 
-	          [(contains? #{"DONE"} ?marker)]
-	        )
-	        [(>= ?d ?start)]
-	        [(<= ?d ?end)]
-	  ]
-	  :inputs [:today/+7d  :today/+90d]
-	  :collapsed? true}
-	  #+END_QUERY
-	- query-table:: true
-	  query-properties:: [:page :block]
-	  collapsed:: true
-	  #+BEGIN_QUERY
 	  {:title [:b "📚 Backlog"]
 	  :query [:find (pull ?h [*])
 	         :in $ 
@@ -107,5 +84,5 @@
 	                      (sort-by (fn [h]
 	                                 (get h :block/priority "Z")) result))
 	  :group-by-page? false
-	  :collapsed? false}
+	  :collapsed? true}
 	  #+END_QUERY
