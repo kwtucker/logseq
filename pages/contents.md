@@ -7,6 +7,7 @@
 - ## Todo
 	- query-table:: true
 	  query-properties:: [:page :block]
+	  collapsed:: true
 	  #+BEGIN_QUERY
 	  {:title [:b "🔨 NOW"]
 	  :query [:find (pull ?h [*])
@@ -73,16 +74,38 @@
 	  query-properties:: [:page :block]
 	  collapsed:: true
 	  #+BEGIN_QUERY
-	  {:title [:b "📚 Backlog"]
-	  :query [:find (pull ?h [*])
+	  {:title [:b "🔭 HORIZON"]
+	  :query [:find (pull ?b [*])
+	        :in $ ?start ?end
+	        :where
+	        (or 
+	          [?b :block/scheduled ?d] 
+	          [?b :block/deadline ?d]
+	        )
+	        (not
+	          [?b :block/marker ?marker] 
+	          [(contains? #{"DONE"} ?marker)]
+	        )
+	        [(>= ?d ?start)]
+	        [(<= ?d ?end)]
+	  ]
+	  :inputs [:today/+7d  :today/+90d]
+	  :collapsed? true}
+	  #+END_QUERY
+	- query-table:: true
+	  query-properties:: [:page :block]
+	  collapsed:: true
+	  #+BEGIN_QUERY
+	   {:title [:b "📚 Backlog"]
+	   :query [:find (pull ?h [*])
 	         :in $ 
 	         :where
 	         [?h :block/marker "LATER"]  ;; Only "LATER" tasks
 	         [?h :block/page ?p]
 	         ]
-	  :result-transform (fn [result]
+	   :result-transform (fn [result]
 	                      (sort-by (fn [h]
 	                                 (get h :block/priority "Z")) result))
-	  :group-by-page? false
-	  :collapsed? true}
+	   :group-by-page? false
+	   :collapsed? true}
 	  #+END_QUERY
