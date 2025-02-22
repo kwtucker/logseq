@@ -1,7 +1,7 @@
 icon:: 💡
 state:: [[🌲]]
 name:: Quotes
-input:: [[Literature]] 
+input:: [[Literature]]
 tags::
 
 	- # [[Quotes]]
