@@ -21,6 +21,19 @@ input:: [[Dashboard]]
 		  name::
 		  input::
 		  tags::
+	- ## Project Template
+	  template:: Project
+	  template-including-parent:: false
+		- state:: [[🌱]]
+		  name::
+		  input:: [[Projects]]
+		  tags::
+			- # <% current page %>
+        - ## Summary
+          - 
+        - ## Tasks
+          - LATER <% current page %>
+            - 
 	- ## Person Template
 	  template:: Person
 	  template-including-parent:: false

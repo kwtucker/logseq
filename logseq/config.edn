@@ -206,7 +206,73 @@
  ;; The following queries will be displayed at the bottom of today's journal page.
  ;; The "NOW" query returns tasks with "NOW" or "DOING" status.
  ;; The "NEXT" query returns tasks with "NOW", "LATER", or "TODO" status.
-:default-queries {}
+ :default-queries {
+  :journals [
+    {
+     ;These are tasks that are marked with 🪨,
+     ; I limit them to max 3 per day and these are my big rocks for the day to get done.
+     ; As the query allows you to see the subtasks it’s easy to break these big rocks down into steps.
+    :title [:h2 "🪨 Rocks" ]
+      :query [:find (pull ?b [*])
+        :where
+          [?p :block/name "🪨"] ; name is always lowercase
+          [?b :block/refs ?p] ; this block references ?p as oppose to being on ?p through :block/page.
+          [?b :block/marker ?marker]
+          [(contains? #{"NOW" "LATER" "TODO" "DOING"} ?marker)]
+      ]
+      :result-transform (fn [result] (sort-by (fn [r] (get-in r [:block/page :block/journal-day])) result))  ; Sort by the journal date
+      :table-view? false
+      :breadcrumb-show? false
+      :collapsed? false
+    }
+    {
+      ; These are mostly my routines and reminders that I need to follow up on something.
+      :title [:h2 "🗓 Scheduled" ]
+      :query [:find (pull ?b [*])
+        :in $ ?today
+        :where
+            [?b :block/marker ?marker]
+            [(contains? #{"LATER" "NOW" "TODO" "DOING" "WAITING"} ?marker)]
+            [?b :block/scheduled ?d]
+            [(<= ?d ?today)]
+      ]
+      :inputs [:today]
+      :result-transform (fn [result] (sort-by (fn [r] (get-in r [:block/page :block/journal-day])) result))  ; Sort by the journal date
+      :table-view? false
+      :breadcrumb-show? false
+      :collapsed? false
+    }
+    {
+      ; All tasks marked with #W, are tasks I made actionable. This means I can do them in 5-10 minutes and the line is a clear thing I can do.
+      :title [:h2 "Widgets" ]
+      :query [:find (pull ?b [*])
+      :where
+        [?p :block/name "w"] ; name is always lowercase
+        [?b :block/refs ?p] ; this block references ?p as oppose to being on ?p through :block/page.
+        [?b :block/marker ?marker]
+        [(contains? #{"LATER" "TODO"} ?marker)]
+      ]
+      :result-transform (fn [result] (sort-by (fn [r] (get-in r [:block/page :block/journal-day])) result))  ; Sort by the journal date
+      :table-view? false
+      :breadcrumb-show? false
+      :collapsed? false
+    }
+    {
+        :title ["🧰 Projects" ]
+        :query [:find (pull ?b [*])
+        :where
+          [?p :block/name "active"] ; name is always lowercase
+          [?b :block/refs ?p] ; this block references ?p as oppose to being on ?p through :block/page.
+          [?b :block/marker ?marker]
+          [(contains? #{"LATER" "TODO"} ?marker)]
+        ]
+        :result-transform (fn [result] (sort-by (fn [r] (get-in r [:block/page :block/journal-day])) result))  ; Sort by the journal date
+        :table-view? false
+        :breadcrumb-show? false
+        :collapsed? false
+    }
+  ]
+ }
 
  ;; Add custom commands to the command palette
  ;; Example usage:
@@ -219,6 +285,7 @@
     ["seed" [[:editor/input "[[🌱]]"]]]
     ["herb" [[:editor/input "[[🌿]]"]]]
     ["evergreen" [[:editor/input "[[🌲]]"]]]
+    ["rock" [[:editor/input "[[🪨]]"]]]
  ]
 
  ;; Enable collapsing blocks with titles but no children.
