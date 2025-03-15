@@ -27,6 +27,7 @@ input:: [[Dashboard]]
 		- state:: [[🌱]]
 		  name::
 		  input:: [[Projects]]
+      status:: [[LATER]]
 		  tags::
 			- # <% current page %>
         - ## Summary
