@@ -29,6 +29,7 @@ input:: [[Dashboard]]
 		  input:: [[Projects]]
       status:: [[LATER]]
 		  tags::
+		  date-finished::
 			- # <% current page %>
         - ## Summary
           - 

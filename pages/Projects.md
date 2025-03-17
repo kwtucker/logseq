@@ -12,4 +12,8 @@ input:: [[Dashboard]]
 			- {{query (and (property :input [[Projects]]) (not (page [[Templates]])) (or (property :status "LATER")  (property :status "TODO"))))}}
 			  query-table:: true
 			  query-properties:: [:state :name]
-	-
+		- ## Completed Projects
+			- {{query (and (property :input [[Projects]]) (not (page [[Templates]])) (property :status "DONE")))}}
+			  query-table:: true
+			  query-properties:: [:name :date-finished]
+-
