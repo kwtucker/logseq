@@ -286,6 +286,7 @@
     ["herb" [[:editor/input "[[🌿]]"]]]
     ["evergreen" [[:editor/input "[[🌲]]"]]]
     ["rock" [[:editor/input "[[🪨]]"]]]
+    ["task" [[:editor/input "#T"]]]
  ]
 
  ;; Enable collapsing blocks with titles but no children.
