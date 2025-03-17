@@ -243,11 +243,11 @@
       :collapsed? false
     }
     {
-      ; All tasks marked with #W, are tasks I made actionable. This means I can do them in 5-10 minutes and the line is a clear thing I can do.
-      :title [:h2 "Widgets" ]
+      ; All tasks marked with #t, are tasks I made actionable. This means I can do them in 5-10 minutes and the line is a clear thing I can do.
+      :title [:h2 "Tasks" ]
       :query [:find (pull ?b [*])
       :where
-        [?p :block/name "w"] ; name is always lowercase
+        [?p :block/name "t"] ; name is always lowercase
         [?b :block/refs ?p] ; this block references ?p as oppose to being on ?p through :block/page.
         [?b :block/marker ?marker]
         [(contains? #{"LATER" "TODO"} ?marker)]
