@@ -6,6 +6,6 @@ input:: [[Dashboard]]
 tags::
 
 	- # [[Tasks]]
-	- {{query (and #t (or(task LATER ) (task TODO ))   )}}
-	  query-table:: true
-	  query-properties:: [:page :block]
+		- {{query (and #t (or(task LATER ) (task TODO ))   )}}
+		  query-table:: true
+		  query-properties:: [:page :block]
