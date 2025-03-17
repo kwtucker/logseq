@@ -27,15 +27,14 @@ input:: [[Dashboard]]
 		- state:: [[🌱]]
 		  name::
 		  input:: [[Projects]]
-      status:: [[LATER]]
 		  tags::
 		  date-finished::
 			- # <% current page %>
-        - ## Summary
-          - 
-        - ## Tasks
-          - LATER <% current page %>
-            - 
+				- ## Summary
+					-
+				- ## Tasks
+					- LATER <% current page %>
+						-
 	- ## Person Template
 	  template:: Person
 	  template-including-parent:: false
@@ -86,17 +85,16 @@ input:: [[Dashboard]]
 		  recommended-by::
 		  source::
 		  rating::
-	- ## Meeting Template
+	- Meeting: 
 	  template:: Meeting
-	  template-including-parent:: false
 		- state:: [[🌱]]
 		  name::
+		  host::
+		  people::
+		  project::
+		  company::
 		  input:: [[Meetings]]
 		  tags::
-		  company::
-		  project::
-			- ### Participants
-				-
 			- ### Agenda
 				-
 			- ### Notes
